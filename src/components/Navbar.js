@@ -3,7 +3,11 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <nav className='navbar navbar-dark bg-dark'>
+        <div className='container'>
+            <a className='navbar-brand' href='/'>React redux </a>
+        </div> 
+    </nav>
   )
 }
 

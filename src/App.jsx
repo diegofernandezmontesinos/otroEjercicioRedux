@@ -1,13 +1,17 @@
+import './App.css';
+import Navbar from './components/Navbar'
+import UserList from './components/UserList';
 
-import './App.css'
 
 function App() {
  
 
   return (
     <>
-      <h1>React Redux</h1>
+      <Navbar />
+      <UserList />
     </>
+ 
   )
 }
 
