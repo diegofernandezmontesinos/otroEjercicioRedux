@@ -1,31 +1,21 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useEffect} from 'react'
+//redux
+import { fetchAllUsers } from '../store/slices/user';
+import { useDispatch, useSelector  } from 'react-redux';
 
 const UserList = () => {
-  
 
-    const users=[
-        {
-        email :	"michael.lawson@reqres.in",
-        first_name :	"Michael",
-        last_name :	"Lawson",
-        avatar :"https://reqres.in/img/faces/7-image.jpg",
-        },
-        {
-        email :	"michael.lawson@reqres.in",
-        first_name :	"Lindsay",
-        last_name :	"Lawson",
-        avatar :"https://reqres.in/img/faces/8-image.jpg"
-        },
-        {
-        email :	"michael.lawson@reqres.in",
-        first_name :	"Michael",
-        last_name :	"Lawson",
-        avatar :"https://reqres.in/img/faces/7-image.jpg",
-        },
+    const { list: users } = useSelector(state => state.users)
+  
+    const dispatch = useDispatch();
+
     
-    ]
+
+    useEffect(() => {
+        dispatch(fetchAllUsers());
+    }, [dispatch]);
 
     return (
     <div className='container'>
